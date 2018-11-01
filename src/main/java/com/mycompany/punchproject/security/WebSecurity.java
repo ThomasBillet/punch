@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.punchproject.util.security;
+package com.mycompany.punchproject.security;
 
-import com.mycompany.punchproject.util.security.AccountDetailService;
-import static com.mycompany.punchproject.util.security.SecurityConstants.SIGN_UP_URL;
+import com.mycompany.punchproject.security.AccountDetailService;
+import static com.mycompany.punchproject.security.SecurityConstants.SIGN_UP_URL;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -28,12 +29,16 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
    
+    @Autowired
+    @Lazy
     private AccountDetailService userDetailsService;
+    
+    
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     
     public WebSecurity() {
-        this.userDetailsService = new AccountDetailService();
+        //this.userDetailsService = new AccountDetailService();
         this.bCryptPasswordEncoder = new BCryptPasswordEncoder();
     }
 

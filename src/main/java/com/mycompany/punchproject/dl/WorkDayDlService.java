@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author tho
  */
+
 @Repository
 public interface WorkDayDlService extends JpaRepository<WorkDay,Long> {
     

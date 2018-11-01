@@ -21,7 +21,6 @@ import org.hibernate.annotations.Generated;
 public class Account implements Serializable {
     
     @Id
-   
     private long id;
     
     private String firstName,lastName;

@@ -11,6 +11,7 @@ import com.mycompany.punchproject.bl.AccountBlService;
 import com.mycompany.punchproject.bo.AccountBo;
 import com.mycompany.punchproject.dl.AccountDlService;
 import com.mycompany.punchproject.entities.Account;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,9 +38,11 @@ public class LoginController {
     
     @PostMapping(path ="/",consumes ="application/json")
     public void signUp(@RequestBody Account user) {    
+        
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         accService.save(user);
-        System.out.println("Hallo");
+        System.out.println(accService.getOne(user.getId()).toString());
+        
     }
     
     

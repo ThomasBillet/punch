@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.punchproject.util.security;
+package com.mycompany.punchproject.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import static com.mycompany.punchproject.util.security.SecurityConstants.HEADER_STRING;
-import static com.mycompany.punchproject.util.security.SecurityConstants.SECRET;
-import static com.mycompany.punchproject.util.security.SecurityConstants.TOKEN_PREFIX;
+import static com.mycompany.punchproject.security.SecurityConstants.HEADER_STRING;
+import static com.mycompany.punchproject.security.SecurityConstants.SECRET;
+import static com.mycompany.punchproject.security.SecurityConstants.TOKEN_PREFIX;
 
 
 

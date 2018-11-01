@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author tho
  */
+
 @Repository
 public interface TimePunchDlService extends JpaRepository<TimePunch,Long> {
     
